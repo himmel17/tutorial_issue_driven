@@ -10,6 +10,7 @@ Python の仮想環境と依存関係は uv で管理します。Claude Code ま
 ## 学習目標
 
 - Issue に目的と受け入れ条件を書く
+- 仕様を選んだ理由を学習用 ADR に残し、実装と一緒にレビューする
 - 作業ブランチでテストと実装を変更する
 - Commit と Push の違いを理解する
 - PR に変更理由とテスト結果を記載し、Issue を紐付ける
@@ -28,10 +29,14 @@ Python の仮想環境と依存関係は uv で管理します。Claude Code ま
 | --- | ---: |
 | 環境準備 | 事前に実施（30〜60分程度） |
 | Issue 起票・ブランチ作成 | 15分 |
+| 学習用 ADR の作成 | 10分 |
 | Skills によるテスト・実装 | 30分 |
 | Commit・Push・PR | 15分 |
 | 一人二役レビュー・必要な修正 | 20分 |
 | マージ・振り返り | 10分 |
+
+本編は合計約100分です。ADR は小さな判断を題材に1件作成し、Git の履歴に残します。
+実務での作成基準とは分けた学習用の工程で、`grill-with-docs` の実行は不要です。
 
 ## サンプルの初期状態
 
@@ -41,9 +46,9 @@ Python の仮想環境と依存関係は uv で管理します。Claude Code ま
 Clone 後、リポジトリのルートで実行します。
 
 ```bash
-uv sync --locked
-uv run --locked pytest
-uv run --locked python -c 'from calculator import add; print(add(2, 3))'
+uv sync
+uv run pytest
+uv run python -c 'from calculator import add; print(add(2, 3))'
 ```
 
 `uv sync` が `.venv` を作成します。activate や `pip install` は不要です。
@@ -53,6 +58,7 @@ uv run --locked python -c 'from calculator import add; print(add(2, 3))'
 
 - [ ] 自分の GitHub リポジトリに受け入れ条件付きの Issue がある
 - [ ] main 以外のブランチで割り算とテストを追加した
+- [ ] `docs/adr/` に判断理由を記録し、実装との整合性をレビューした
 - [ ] テストの失敗と成功を確認した
 - [ ] PR に関連 Issue と実際のテスト結果を書いた
 - [ ] 自分で差分を読み、Comment 形式のレビューを残した

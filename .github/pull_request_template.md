@@ -6,9 +6,13 @@
 
 Closes #REPLACE_WITH_ISSUE_NUMBER
 
+## 判断理由
+
+<!-- 作成した docs/adr/ のファイルのパスと、主な選択理由 -->
+
 ## 確認結果
 
-- 実行コマンド: `uv run --locked pytest`
+- 実行コマンド: `uv run pytest`
 - 結果: <!-- 件数と成功・失敗 -->
 - 動作例: <!-- 変更前と変更後 -->
 
@@ -16,4 +20,5 @@ Closes #REPLACE_WITH_ISSUE_NUMBER
 
 - [ ] Issue の受け入れ条件を満たしている
 - [ ] 正常系・境界値・エラーのテストを確認した
+- [ ] ADR に判断理由があり、Issue・実装・テストと一致している
 - [ ] Files changed に意図しない変更がない

@@ -41,12 +41,12 @@ gh repo view
 ```bash
 uv --version
 uv python install
-uv sync --locked
+uv sync
 ```
 
 - Python のダウンロード失敗：接続・プロキシ・社内証明書の設定を確認します。
-- lockfile がない：教材のコピーが完了しているか確認します。受講者が解決し直すのではなく、配布元を確認します。
-- lockfile が古い：意図しない `pyproject.toml` の編集がないか `git diff` で確認します。この演習では依存の変更は不要です。
+- `uv.lock` がない：`uv sync` が自動生成します。教材には同梱されているので、ほかにもファイルが不足していないか確認します。
+- 依存関係の解決に失敗する：`pyproject.toml` に意図しない編集がないか `git diff` で確認します。この演習では依存の変更は不要です。
 
 `uv.lock` を手で編集したり、解決策として `pip install` へ切り替えたりしないでください。
 
@@ -54,7 +54,7 @@ uv sync --locked
 
 ```bash
 pwd
-uv run --locked pytest
+uv run pytest
 ```
 
 プロジェクトのルートから実行します。`calculator.py` のファイル名と、テストが import する関数名を確認してください。
@@ -115,7 +115,7 @@ PR の **Checks** またはリポジトリの **Actions** を開きます。
 本教材では main への Push と main 向け PR で実行します。feature への Push だけでは、PR 作成前の CI は動きません。
 
 失敗した場合は、失敗ステップとログを読みます。
-テスト失敗ならローカルで `uv run --locked pytest` を実行し、同じブランチで修正・Commit・Push します。
+テスト失敗ならローカルで `uv run pytest` を実行し、同じブランチで修正・Commit・Push します。
 ダウンロードやサービス側の一時障害なら、原因を確認してから再実行します。
 CI を削除したりテストを無効化したりして成功扱いにしないでください。
 

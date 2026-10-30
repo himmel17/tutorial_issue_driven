@@ -92,10 +92,10 @@ gh repo view
 
 ```bash
 uv python install
-uv sync --locked
-uv run --locked python --version
-uv run --locked pytest
-uv run --locked python -c 'from calculator import add; print(add(2, 3))'
+uv sync
+uv run python --version
+uv run pytest
+uv run python -c 'from calculator import add; print(add(2, 3))'
 ```
 
 **期待結果**：Python 3.12 系、`12 passed`、加算結果 `5`。
@@ -159,7 +159,7 @@ Issue tracker は origin の自分の GitHub リポジトリを使います。
 単一の小さな Python プロジェクトで、実行とテストは uv で管理します。
 設定先を聞かれたら AGENTS.md を選びます。
 Claude Code 向けの案内が必要なら CLAUDE.md から AGENTS.md を参照してください。
-テストコマンドは uv run --locked pytest です。
+テストコマンドは uv run pytest です。
 Issue、PR、ラベルはまだ作らず、Commit・Push も行わないでください。
 今回の変更は Skills の初期設定用ファイルに限定し、設定案を確認させてください。
 ```
