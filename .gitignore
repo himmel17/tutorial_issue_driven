@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.uv-cache/
+# 受講者がローカルに導入する外部 Skills
+.agents/skills/
+.claude/skills/
+.codex/skills/
+skills-lock.json

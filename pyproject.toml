@@ -1,0 +1,13 @@
+[project]
+name = "tutorial-issue-driven"
+version = "0.1.0"
+description = "GitHub Issue から PR までを体験する Python ハンズオン"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=8.3,<9"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
